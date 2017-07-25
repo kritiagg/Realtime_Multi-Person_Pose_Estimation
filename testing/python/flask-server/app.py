@@ -1,4 +1,5 @@
 import os
+import json
 # We'll render HTML templates and access data sent by POST
 # using the request object from flask. Redirect and url_for
 # will be used to redirect the user once the upload is done
@@ -32,21 +33,9 @@ def index():
 # Route that will process the file upload
 @app.route('/api', methods=['POST'])
 def upload():
-    print("file upload request")
-    # Get the name of the uploaded file
-    file = request.files['file']
-    print("file:",file)
-    # Check if the file is one of the allowed types/extensions
-    if file and allowed_file(file.filename):
-        # Make the filename safe, remove unsupported chars
-        filename = secure_filename(file.filename)
-        # Move the file form the temporal folder to
-        # the upload folder we setup
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        # Redirect the user to the uploaded_file route, which
-        # will basicaly show on the browser the uploaded file
-        return filename
-    return "Bad file"
+ print("file upload request")
+ d = {"Scene":{"Content":"Your custom caption here.","Format":"Text","Success":True}}
+ return json.dumps(d)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug = True)
