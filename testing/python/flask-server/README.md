@@ -1,4 +1,9 @@
 ## Basic instructions
+
+### Installation 
+pip install flask
+
+### Usage
 to export the flask app use
 export FLASK_APP=app.py
 flask run
