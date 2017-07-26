@@ -34,6 +34,16 @@ def index():
 @app.route('/api', methods=['POST'])
 def upload():
  print("file upload request")
+ from PIL import Image
+ from PIL import ImageDraw
+ import io
+ import binascii
+  
+ data = request.data 
+ stream = io.BytesIO(data) 
+ img = Image.open(stream)
+ draw = ImageDraw.Draw(img)
+ img.save("a_test.jpg")
  from  subprocess import call
  call(['python', 'hackathon.py'])
  f = open('output.txt', 'r')

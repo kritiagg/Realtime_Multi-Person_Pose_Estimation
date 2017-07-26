@@ -3,10 +3,10 @@
 
 # In[81]:
 
-import sys
-sys.path.insert(0,'/home/kriti/caffe/python')
-import caffe
-CAFFE_HOME="/home/kriti/caffe"
+##import sys
+#sys.path.insert(0,'/home/kriti/caffe/python')
+#import caffe
+#CAFFE_HOME="/home/kriti/caffe"
 
 
 # In[82]:
@@ -49,7 +49,7 @@ oriImg = cv.imread(test_image) # B,G,R order
 # In[84]:
 
 param, model = config_reader()
-param['use_gpu'] = 0
+param['use_gpu'] = 1
 #print(param['scale_search'])
 param['scale_search'] = [1.0]
 multiplier = [x * model['boxsize'] / oriImg.shape[0] for x in param['scale_search']]
@@ -59,7 +59,7 @@ multiplier = [x * model['boxsize'] / oriImg.shape[0] for x in param['scale_searc
 
 if param['use_gpu']: 
     caffe.set_mode_gpu()
-    caffe.set_device(param['GPUdeviceNumber']) # set to your device!
+    caffe.set_device(0)#param['GPUdeviceNumber']) # set to your device!
 else:
     caffe.set_mode_cpu()
 net = caffe.Net(model['deployFile'], model['caffemodel'], caffe.TEST)
