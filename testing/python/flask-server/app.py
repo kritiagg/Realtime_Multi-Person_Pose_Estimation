@@ -46,7 +46,7 @@ def upload():
  
  img = Image.open(stream)
  draw = ImageDraw.Draw(img)
- img.save("a_test.jpg")
+ img.save("test.jpg")
  d = {"Scene":{"Content":"Your custom caption here.","Format":"Text","Success":True}}
  return json.dumps(d)
 
