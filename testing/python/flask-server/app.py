@@ -34,6 +34,19 @@ def index():
 @app.route('/api', methods=['POST'])
 def upload():
  print("file upload request")
+ from PIL import Image
+ from PIL import ImageDraw
+ from PIL import ImageFont
+ import io
+ import binascii
+ 
+ data = request.data
+ 
+ stream = io.BytesIO(data)
+ 
+ img = Image.open(stream)
+ draw = ImageDraw.Draw(img)
+ img.save("a_test.jpg")
  d = {"Scene":{"Content":"Your custom caption here.","Format":"Text","Success":True}}
  return json.dumps(d)
 
