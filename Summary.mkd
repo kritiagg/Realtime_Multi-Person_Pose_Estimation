@@ -10,5 +10,5 @@ and produces, as output, the 2D locations of anatomical keypoints
 for each person in the image.
 
 ## Model 
-![alt text][model.PNG]
+[https://github.com/kritiagg/Realtime_Multi-Person_Pose_Estimation/blob/master/model.PNG]
 The model is split into two 
