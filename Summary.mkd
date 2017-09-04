@@ -11,4 +11,6 @@ for each person in the image.
 
 ## Model 
 ![alt text](https://github.com/kritiagg/Realtime_Multi-Person_Pose_Estimation/blob/master/model.PNG)
-The model is split into two 
+
+The model is split into two branches: one predicts the confidence maps for the body parts and the second branch predicts the affinity 
+between those body parts.
