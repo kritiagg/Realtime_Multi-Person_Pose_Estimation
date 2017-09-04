@@ -1,0 +1,2 @@
+# Realtime multi person pose estimation
+Detects 2D pose of multiple people in the image. Jointly trianed to find the body parts and associations of the body parts with the individuals.
