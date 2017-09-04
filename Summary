@@ -9,5 +9,6 @@ The system takes, as input, a color image of size w × h (Fig. 2a)
 and produces, as output, the 2D locations of anatomical keypoints
 for each person in the image.
 
-## Model
+## Model 
+![alt text][model.PNG]
 The model is split into two 
